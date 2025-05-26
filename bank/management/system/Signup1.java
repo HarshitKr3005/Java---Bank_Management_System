@@ -59,6 +59,7 @@ public class Signup1 extends JFrame implements ActionListener {
         dob.setBounds(100, 240,200,30);
         add(dob);
 
+
         jDateChooser = new JDateChooser();
         jDateChooser.setBounds(300, 240, 400, 30);
         jDateChooser.setForeground(new Color(105, 105, 105));
