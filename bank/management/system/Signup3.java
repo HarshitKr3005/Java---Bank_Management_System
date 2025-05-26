@@ -203,13 +203,16 @@ public class Signup3 extends JFrame implements ActionListener {
                     String query2 = "insert into login values('"+formno+"', '"+cardnumber+"', '"+pinnumber+"')";
                     c.s.executeUpdate(query2);
                     JOptionPane.showMessageDialog(null, "Card Number: " + cardnumber + "\n PIN: " + pinnumber);
+                    setVisible(false);
+                    new Deposit(pinnumber).setVisible(true);
                 }
 
             } catch(Exception e) {
                 System.out.println(e);
             }
         } else if(ae.getSource() == cancel) {
-
+            setVisible(false);
+            new Login().setVisible(true);
         }
     }
     public static void main(String[] args) {
