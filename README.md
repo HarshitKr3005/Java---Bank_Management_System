@@ -28,20 +28,22 @@ A desktop-based Banking Management System developed in Java using Swing for the 
 
 ## 📁 Project Structure
 
+Project Structure
 Java---Bank_Management_System/
 ├── bank/
-│ └── management/
-│ └── system/
-│ ├── Conn.java
-│ ├── Login.java
-│ ├── Signup.java
-│ ├── Transactions.java
-│ ├── Deposit.java
-│ ├── Withdrawal.java
-│ ├── FastCash.java
-│ ├── Mini_Statement.java
-│ ├── PinChange.java
-│ └── BalanceEnquiry.java
+│   └── management/
+│       └── system/
+│           ├── Conn.java
+│           ├── Login.java
+│           ├── Signup.java
+│           ├── Transactions.java
+│           ├── Deposit.java
+│           ├── Withdrawal.java
+│           ├── FastCash.java
+│           ├── Mini_Statement.java
+│           ├── PinChange.java
+│           └── BalanceEnquiry.java
 ├── icon/
-│ └── atm.jpg
+│   └── atm.jpg
 └── README.md
+
