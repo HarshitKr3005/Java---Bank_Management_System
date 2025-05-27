@@ -27,7 +27,7 @@ A desktop-based Banking Management System developed in Java using Swing for the 
 - MySQL
 
 ## 📁 Project Structure
-
+'''
 Java---Bank_Management_System/
 ├── bank/
 │ └── management/
@@ -45,4 +45,4 @@ Java---Bank_Management_System/
 ├── icon/
 │ └── atm.jpg
 └── README.md
-
+'''
