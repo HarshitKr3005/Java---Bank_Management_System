@@ -29,7 +29,7 @@ A desktop-based Banking Management System developed in Java using Swing for the 
 ## 📁 Project Structure
 
 ### 📝 Signup Page 1
-![Signup Page 1](Screenshot 2025-05-27 114209.png)
+![image alt](https://github.com/HarshitKr3005/Java---Bank_Management_System/blob/afaf9ea96dc82ff4cf40309a20f621da580085bb/Screenshots/Login%20Page.png)
 
 
 
