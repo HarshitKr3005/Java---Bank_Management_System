@@ -12,7 +12,7 @@ public class Signup1 extends JFrame implements ActionListener {
     long random;
     JTextField nameTextField, fnameTextField, dobTextField, emailTextField, addressTextField, cityTextField, stateTextField, pinTextField;
     JButton next;
-    JRadioButton male, female, other, married, unmarried;
+    JRadioButton male, female, other, married, unmarried, genderothers;
     JDateChooser jDateChooser;
     JLabel formno, personalDetails, name, fname, dob, gender, emailId, maritalStatus, address, city, state, pinCode;
     ButtonGroup maritalgroup, gendergroup;
@@ -80,9 +80,15 @@ public class Signup1 extends JFrame implements ActionListener {
         female.setBackground(Color.white);
         add(female);
 
+        genderothers = new JRadioButton("Others");
+        genderothers.setBounds(600, 290, 120, 30);
+        genderothers.setBackground(Color.white);
+        add(genderothers);
+
         gendergroup = new ButtonGroup();
         gendergroup.add(male);
         gendergroup.add(female);
+        gendergroup.add(genderothers);
 
         emailId = new JLabel("Email Address:");
         emailId.setFont(new Font("Raleway", Font.BOLD, 20));
