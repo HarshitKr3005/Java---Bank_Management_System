@@ -71,30 +71,30 @@ public class Login extends JFrame implements ActionListener {
 
         setSize(800, 480);
         setVisible(true);
-        setLocation(350,200);
+        setLocation(350, 200);
     }
 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == clear) {
             cardTextField.setText("");
             pinTextField.setText("");
-        } else if(ae.getSource() == login) {
+        } else if (ae.getSource() == login) {
             Conn c = new Conn();
             String cardnumber = cardTextField.getText();
             String pinnumber = pinTextField.getText();
-            String query = "select * from login where card_number = '" + cardnumber+"' and pin_number = '" + pinnumber+"'";
+            String query = "select * from login where card_number = '" + cardnumber + "' and pin_number = '" + pinnumber + "'";
             try {
                 ResultSet rs = c.s.executeQuery(query);
-                if(rs.next()) {
+                if (rs.next()) {
                     setVisible(false);
                     new Transactions(pinnumber).setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Incorrect credentials");
                 }
-            } catch(Exception e) {
+            } catch (Exception e) {
                 System.out.println(e);
             }
-        } else if(ae.getSource() == signUp) {
+        } else if (ae.getSource() == signUp) {
             setVisible(false);
             new Signup1().setVisible(true);
         }
