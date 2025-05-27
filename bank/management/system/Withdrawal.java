@@ -2,9 +2,8 @@ package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.SQLException;
+import java.awt.event.*;
+import java.sql.*;
 import java.util.Date;
 
 public class Withdrawal extends JFrame implements ActionListener {
@@ -22,7 +21,7 @@ public class Withdrawal extends JFrame implements ActionListener {
         Image i2 = i1.getImage().getScaledInstance(900, 900, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         image = new JLabel(i3);
-        image.setBounds(0,0,900,900);
+        image.setBounds(0, 0, 900, 900);
         add(image);
 
         text = new JLabel("Enter the amount you want to withdraw");
@@ -47,29 +46,53 @@ public class Withdrawal extends JFrame implements ActionListener {
         image.add(back);
 
         setSize(900, 900);
-        setLocation(300,0);
+        setLocation(300, 0);
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent ae) {
-        if(ae.getSource() == withdraw) {
+        if (ae.getSource() == withdraw) {
             String number = amount.getText();
             Date date = new Date();
-            if(number.equals("")) {
+            if (number.equals("")) {
                 JOptionPane.showMessageDialog(null, "Please enter the amount you want to withdraw");
             } else {
-                Conn conn = new Conn();
-                String query = "insert into bank values('"+pinnumber+"', '"+date+"', 'Withdrawal', '"+number+"')";
                 try {
-                    conn.s.executeUpdate(query);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                    Conn conn = new Conn();
+
+
+                    String query = "SELECT * FROM bank WHERE pin = '" + pinnumber + "'";
+                    ResultSet rs = conn.s.executeQuery(query);
+                    int balance = 0;
+                    while (rs.next()) {
+                        String type = rs.getString("type");
+                        int amt = Integer.parseInt(rs.getString("amount"));
+                        if (type.equals("Deposit")) {
+                            balance += amt;
+                        } else {
+                            balance -= amt;
+                        }
+                    }
+
+
+                    int withdrawAmount = Integer.parseInt(number);
+                    if (withdrawAmount > balance) {
+                        JOptionPane.showMessageDialog(null, "Insufficient balance");
+                        return;
+                    }
+
+
+                    String withdrawQuery = "INSERT INTO bank VALUES('" + pinnumber + "', '" + date + "', 'Withdrawal', '" + number + "')";
+                    conn.s.executeUpdate(withdrawQuery);
+                    JOptionPane.showMessageDialog(null, "Rs " + number + " withdrawn successfully.");
+                    setVisible(false);
+                    new Transactions(pinnumber).setVisible(true);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                JOptionPane.showMessageDialog(null, "Rs " + number + " withdraw successfully.");
-                setVisible(false);
-                new Transactions(pinnumber).setVisible(true);
             }
-        } else if(ae.getSource() == back) {
+        } else if (ae.getSource() == back) {
             setVisible(false);
             new Transactions(pinnumber).setVisible(true);
         }
