@@ -44,7 +44,9 @@ Java---Bank_Management_System/
 │           ├── PinChange.java
 │           └── BalanceEnquiry.java
 ├── icon/
-│   └── atm.jpg
+│   ├── atm.jpg
+│   └── logo.jpg
 └── README.md
 ```
+
 
