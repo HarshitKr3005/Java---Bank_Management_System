@@ -33,20 +33,23 @@ Java---Bank_Management_System/
 ├── bank/
 │   └── management/
 │       └── system/
+│           ├── Balance_Enquiry.java
 │           ├── Conn.java
-│           ├── Login.java
-│           ├── Signup.java
-│           ├── Transactions.java
 │           ├── Deposit.java
-│           ├── Withdrawal.java
 │           ├── FastCash.java
+│           ├── Login.java
 │           ├── Mini_Statement.java
 │           ├── PinChange.java
-│           └── BalanceEnquiry.java
+│           ├── Signup1.java
+│           ├── Signup2.java
+│           ├── Signup3.java
+│           ├── Transactions.java
+│           └── Withdrawal.java
 ├── icon/
 │   ├── atm.jpg
 │   └── logo.jpg
 └── README.md
 ```
+
 
 
