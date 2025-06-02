@@ -18,6 +18,7 @@ A desktop-based Banking Management System developed in Java using Swing for the 
 ## 🛠️ Technologies Used
 
 - Java
+- AWT
 - Swing (GUI)
 - JDBC (Database Connectivity)
 - MySQL
